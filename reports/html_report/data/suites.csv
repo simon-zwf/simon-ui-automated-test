@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+测试步骤：
+1. 打开指定App
+2. 等待App加载
+3. 点击首页元素(id=home)
+","8789","测试首页点击功能","test_cases.app","2025-10-28","passed","2025-10-28","TestGlassesApp","test_glasses","",""
