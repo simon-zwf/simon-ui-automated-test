@@ -21,7 +21,7 @@ def run_test():
         "--alluredir=reports/allure_results"
     ]
 
-    print("🎯 开始执行测试...")
+    print("开始执行测试...")
     print(f"执行命令: {' '.join(cmd)}")
 
     # 运行测试
@@ -35,10 +35,10 @@ def run_test():
             "-o", "reports/html_report",
             "--clean"
         ])
-        print("📊 测试报告生成完成")
-        print("📁 报告位置: reports/html_report/index.html")
+        print("测试报告生成完成")
+        print("报告位置: reports/html_report/index.html")
     else:
-        print("❌ 测试执行失败")
+        print("测试执行失败")
 
     return result.returncode
 

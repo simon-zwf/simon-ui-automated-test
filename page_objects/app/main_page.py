@@ -21,26 +21,26 @@ class MainPage:
     @allure.step("等待App加载")
     def wait_for_app_loaded(self, timeout=10):
         """等待App加载完成"""
-        print("⏳ 等待App加载...")
+        print("等待App加载...")
         time.sleep(5)
 
     @allure.step("点击首页元素")
     def click_home_element(self):
         """点击首页元素"""
-        print("🖱️ 尝试点击首页元素 (id=iv_home)")
+        print("尝试点击首页元素 (id=iv_home)")
 
         # 使用封装的点击方法
         result = self.action.click_by_id("iv_home")
 
         if result:
-            print("✅ 首页home点击成功")
+            print("首页home点击成功")
         else:
-            print("❌ 首页元素点击失败")
+            print("首页元素点击失败")
 
         return result
 
     @allure.step("验证操作结果")
     def verify_operation_success(self):
         """验证操作是否成功"""
-        print("🔍 验证操作结果...")
+        print("验证操作结果...")
         return True

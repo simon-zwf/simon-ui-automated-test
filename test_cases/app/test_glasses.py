@@ -30,7 +30,7 @@ class TestGlassesApp:
 
         with allure.step("打开App并等待加载"):
             main_page.wait_for_app_loaded()
-            print("✅ App打开成功")
+            print(" App打开成功")
 
         with allure.step("点击首页元素"):
             result = main_page.click_home_element()
@@ -41,4 +41,4 @@ class TestGlassesApp:
             verification_result = main_page.verify_operation_success()
             assert verification_result, "操作验证失败"
 
-        print("🎉 测试用例执行完成！")
+        print("测试用例执行完成！")

@@ -5,7 +5,7 @@
 # @FileName: conftest.py.py
 # @Email: wangfu_zhang@ggec.com.cn
 # ==================================================
-# conftest.py
+
 import pytest
 import allure
 from appium import webdriver
@@ -18,7 +18,7 @@ def app_driver():
     """创建Appium驱动 - 使用新版本API"""
     driver = None
     try:
-        print("🚀 启动Appium驱动...")
+        print("启动Appium驱动...")
         print(f"连接Appium服务器: {AppConfig.APPIUM_SERVER}")
         print(f"设备配置: {AppConfig.DESIRED_CAPS}")
 
@@ -35,16 +35,16 @@ def app_driver():
             options=options
         )
 
-        print("✅ Appium驱动创建成功")
+        print("Appium驱动创建成功")
         yield driver
 
     except Exception as e:
-        print(f"❌ 创建Appium驱动失败: {e}")
+        print(f"创建Appium驱动失败: {e}")
         raise
     finally:
         # 关闭驱动
         if driver:
-            print("🛑 关闭Appium驱动")
+            print("关闭Appium驱动")
             driver.quit()
 
 
@@ -64,6 +64,6 @@ def pytest_runtest_makereport(item, call):
                     name="failure_screenshot",
                     attachment_type=allure.attachment_type.PNG
                 )
-                print("📸 失败截图已保存")
+                print("失败截图已保存")
         except Exception as e:
             print(f"截图失败: {e}")

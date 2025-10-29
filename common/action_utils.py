@@ -25,18 +25,18 @@ class ActionUtils:
             try:
                 element = self.element_finder.find_element(locator_type, locator_value)
                 element.click()
-                print(f"✅ 成功点击元素: {locator_type}='{locator_value}'")
+                print(f"成功点击元素: {locator_type}='{locator_value}'")
                 time.sleep(1)
                 return True
             except ElementNotInteractableException:
                 if attempt < max_retries - 1:
-                    print(f"⚠️ 元素不可点击，重试 {attempt + 1}/{max_retries}")
+                    print(f"元素不可点击，重试 {attempt + 1}/{max_retries}")
                     time.sleep(2)
                 else:
-                    print(f"❌ 元素无法点击: {locator_type}='{locator_value}'")
+                    print(f"元素无法点击: {locator_type}='{locator_value}'")
                     raise
             except Exception as e:
-                print(f"❌ 点击元素失败: {e}")
+                print(f" 点击元素失败: {e}")
                 if attempt == max_retries - 1:
                     raise
 
@@ -60,7 +60,7 @@ class ActionUtils:
             print(f"✅ 成功输入文本: '{text}' 到元素 {locator_type}='{locator_value}'")
             return True
         except Exception as e:
-            print(f"❌ 输入文本失败: {e}")
+            print(f" 输入文本失败: {e}")
             raise
 
     def swipe_up(self, duration=1000):
@@ -71,7 +71,7 @@ class ActionUtils:
         end_y = screen_size['height'] * 0.2
 
         self.driver.swipe(start_x, start_y, start_x, end_y, duration)
-        print("✅ 向上滑动完成")
+        print("向上滑动完成")
         time.sleep(1)
 
     def swipe_down(self, duration=1000):
@@ -82,5 +82,5 @@ class ActionUtils:
         end_y = screen_size['height'] * 0.8
 
         self.driver.swipe(start_x, start_y, start_x, end_y, duration)
-        print("✅ 向下滑动完成")
+        print("向下滑动完成")
         time.sleep(1)
